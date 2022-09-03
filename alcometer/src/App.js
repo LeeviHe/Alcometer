@@ -84,11 +84,9 @@ function App() {
       </div>
       <br/>
       <output>{result.toFixed(2)}</output>
-      
       <div>
         <button type="button" onClick={calculate}>Calculate</button>
       </div>
-      
     </form>
   );
 }

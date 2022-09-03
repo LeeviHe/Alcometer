@@ -14,7 +14,7 @@ function App() {
     let Burning = weight / 10
     let GramsLeft = Grams - (Burning*time)
 
-    if (gender == 1){
+    if (gender === 1){
       let Result = GramsLeft / (weight * 0.7)
       if (Result < 0){
         setResult(0)
@@ -23,7 +23,7 @@ function App() {
         setResult(Math.round(Result * 100) / 100)
       }
     }
-    else if (gender == 2){
+    else if (gender === 2){
       let Result = GramsLeft / (weight * 0.6)
       if (Result < 0){
         setResult(0)

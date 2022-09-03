@@ -14,22 +14,22 @@ function App() {
     let Burning = weight / 10
     let GramsLeft = Grams - (Burning*time)
 
-    if (gender === 1){
+    if (gender === "male"){
       let Result = GramsLeft / (weight * 0.7)
       if (Result < 0){
         setResult(0)
       }
       else{
-        setResult(Math.round(Result * 100) / 100)
+        setResult(Result)
       }
     }
-    else if (gender === 2){
+    else if (gender === "female"){
       let Result = GramsLeft / (weight * 0.6)
       if (Result < 0){
         setResult(0)
       }
       else{
-        setResult(Math.round(Result * 100) / 100)
+        setResult(Result)
       }
     }
     
@@ -77,16 +77,18 @@ function App() {
       </div>
       <div>
         <label>Gender</label>
-        <input type="radio" name="gender" value="1" onClick={e => setGender (e.target.value)}/>
+        <input type="radio" name="gender" value="male" onClick={e => setGender (e.target.value)}/>
         <label>Male</label> 
-        <input type="radio" name="gender" value="2" onClick={e => setGender (e.target.value)}/>
+        <input type="radio" name="gender" value="female" onClick={e => setGender (e.target.value)}/>
         <label>Female</label>
       </div>
       <br/>
-      <output>{result}</output>
-      <br/>
-      <br/>
-      <button type="button" onClick={calculate}>Calculate</button>
+      <output>{result.toFixed(2)}</output>
+      
+      <div>
+        <button type="button" onClick={calculate}>Calculate</button>
+      </div>
+      
     </form>
   );
 }
